@@ -1,0 +1,84 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 20
+        padding: [40, 80]
+        canvas.before:
+            Color:
+                rgba: (0.07, 0.01, 0.01, 1)  # fundo vinho escuro
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Image:
+            source: '/assets/images/logo_transparente.png'  # Substitua com seu arquivo real
+            size_hint: None, None
+            size: 140, 140
+            allow_stretch: True
+            keep_ratio: True
+            pos_hint: {"center_x": 0.5}
+
+        Label:
+            text: "Personal Trainer"
+            font_size: '22sp'
+            color: (1, 0.6, 0.2, 1)  # marrom-dourado
+            bold: True
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Label:
+            text: "Entrar"
+            font_size: '18sp'
+            color: (1, 0.6, 0.2, 1)
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        TextInput:
+            id: email
+            hint_text: "Digite o email"
+            multiline: False
+            size_hint_y: None
+            height: 45
+            padding: [10, 10]
+            background_normal: ''
+            background_color: (1, 1, 1, 1)
+            foreground_color: (0, 0, 0, 1)
+            radius: [10]
+
+        TextInput:
+            id: password
+            hint_text: "Digite a senha"
+            multiline: False
+            password: True
+            size_hint_y: None
+            height: 45
+            padding: [10, 10]
+            background_normal: ''
+            background_color: (1, 1, 1, 1)
+            foreground_color: (0, 0, 0, 1)
+            radius: [10]
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 30
+            Widget:
+            Button:
+                text: "Esqueceu a senha?"
+                background_normal: ''
+                background_color: 0, 0, 0, 0
+                color: (1, 1, 1, 1)
+                font_size: '14sp'
+                size_hint_x: None
+                width: 150
+                on_press: root.forgot_password()
+
+        Button:
+            text: "Acessar"
+            size_hint_y: None
+            height: 45
+            background_normal: ''
+            background_color: (0.4, 0.2, 0.05, 1)  # marrom
+            color: (1, 1, 1, 1)
+            font_size: '16sp'
+            on_press: root.do_login()

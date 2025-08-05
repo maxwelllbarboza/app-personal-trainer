@@ -1,0 +1,39 @@
+<LoginScreen>:
+    email: email
+    password: password
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "Login"
+            font_size: 24
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: email
+            hint_text: "Email"
+            multiline: False
+
+        TextInput:
+            id: password
+            hint_text: "Senha"
+            password: True
+            multiline: False
+
+        Label:
+            text: root.message
+            color: 1, 0, 0, 1  # Vermelho para erro
+            size_hint_y: None
+            height: 30
+
+        Button:
+            text: "Entrar"
+            on_press: root.do_login()
+
+        Button:
+            text: "Esqueci minha senha"
+            on_press: root.forgot_password()

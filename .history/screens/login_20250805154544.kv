@@ -1,0 +1,32 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 20
+
+        Label:
+            text: "Login"
+            font_size: 32
+
+        TextInput:
+            id: email
+            hint_text: "Email"
+            multiline: False
+
+        TextInput:
+            id: password
+            hint_text: "Password"
+            password: True
+            multiline: False
+
+        Label:
+            text: root.message
+            color: 1,0,0,1
+
+        Button:
+            text: "Entrar"
+            on_release: root.do_login()
+
+        Button:
+            text: "Esqueci minha senha"
+            on_release: root.forgot_password()

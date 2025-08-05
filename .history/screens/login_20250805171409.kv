@@ -1,0 +1,73 @@
+<LoginScreen>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: (0.07, 0.0, 0.0, 1)  # Cor de fundo bem escura (quase preta)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Image:
+            source: 'logo_transparente.png'
+            size_hint: 0.4, 0.4
+            pos_hint: {'center_x': 0.5, 'top': 0.95}
+            allow_stretch: True
+            keep_ratio: True
+
+        Label:
+            text: "Personal Trainer"
+            font_size: '22sp'
+            color: (0.6, 0.3, 0.0, 1)  # Marrom dourado
+            pos_hint: {'center_x': 0.5, 'top': 0.58}
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Label:
+            text: "Entrar"
+            font_size: '18sp'
+            color: (0.6, 0.3, 0.0, 1)
+            pos_hint: {'center_x': 0.5, 'top': 0.52}
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        TextInput:
+            id: email
+            hint_text: "Digite o email"
+            size_hint: 0.8, None
+            height: 40
+            pos_hint: {'center_x': 0.5, 'top': 0.45}
+            multiline: False
+            background_normal: ''
+            background_color: (1,1,1,1)
+            foreground_color: (0,0,0,1)
+            padding: 10
+
+        TextInput:
+            id: senha
+            hint_text: "Digite a senha"
+            password: True
+            size_hint: 0.8, None
+            height: 40
+            pos_hint: {'center_x': 0.5, 'top': 0.38}
+            multiline: False
+            background_normal: ''
+            background_color: (1,1,1,1)
+            foreground_color: (0,0,0,1)
+            padding: 10
+
+        Label:
+            text: "Esqueceu a senha?"
+            font_size: '12sp'
+            color: (1, 1, 1, 1)
+            pos_hint: {'right': 0.9, 'top': 0.33}
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Button:
+            text: "Acessar"
+            size_hint: 0.7, None
+            height: 50
+            pos_hint: {'center_x': 0.5, 'top': 0.25}
+            background_color: (0.36, 0.2, 0.0, 1)  # Marrom escuro
+            color: (1,1,1,1)
+            on_press: root.acessar()

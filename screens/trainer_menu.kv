@@ -1,0 +1,22 @@
+<TrainerMenuScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 20
+
+        Label:
+            id: welcome
+            text: "Bem-vindo(a)!"
+            font_size: 24
+
+        Button:
+            text: "Alunos"
+            on_release: root.go_to_students()
+
+        Button:
+            text: "Treinos"
+            on_release: root.go_to_workouts()
+
+        Button:
+            text: "Sair"
+            on_release: app.root.current = "login"

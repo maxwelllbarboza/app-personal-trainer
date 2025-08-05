@@ -1,0 +1,29 @@
+<StudentListScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 20
+
+        BoxLayout:
+            size_hint_y: None
+            height: 40
+            TextInput:
+                id: search
+                hint_text: "Buscar aluno"
+                multiline: False
+            Button:
+                text: "Adicionar"
+                on_release: root.add_student()
+
+        ScrollView:
+            GridLayout:
+                id: students_grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 40
+                row_force_default: True
+
+        Button:
+            text: "Voltar"
+            on_release: app.root.current = "trainer_menu"

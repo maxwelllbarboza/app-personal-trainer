@@ -1,0 +1,46 @@
+<StudentRegisterScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 20
+
+        Label:
+            text: "Cadastro de Aluno"
+            font_size: 28
+
+        TextInput:
+            id: name
+            hint_text: "Nome completo"
+            multiline: False
+
+        TextInput:
+            id: email
+            hint_text: "Email"
+            multiline: False
+
+        TextInput:
+            id: phone
+            hint_text: "Telefone"
+            multiline: False
+
+        TextInput:
+            id: birthdate
+            hint_text: "Data de nascimento"
+            multiline: False
+
+        Spinner:
+            id: profile
+            text: "Perfil"
+            values: ["Student", "Trainer"]
+
+        Label:
+            text: root.message
+            color: 1,0,0,1
+
+        Button:
+            text: "Salvar"
+            on_release: root.save_student()
+
+        Button:
+            text: "Voltar"
+            on_release: app.root.current = "student_list"
