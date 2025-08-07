@@ -85,7 +85,7 @@ class LoginScreen(Screen):
         if tipo == "Professor":
             self.manager.current = "trainer_menu"
         else:
-            self.manager.current = "trainer_menu"
+            self.manager.current = "student_list"
         self.manager.get_screen(self.manager.current).user_email = email
 
     def forgot_password(self):

@@ -1,0 +1,35 @@
+<WorkoutRegisterScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 20
+
+        Label:
+            text: "Cadastro de Treino"
+            font_size: 28
+
+        TextInput:
+            id: student
+            hint_text: "Email do aluno"
+            multiline: False
+
+        TextInput:
+            id: workout_name
+            hint_text: "Nome do treino"
+            multiline: False
+
+        Label:
+            text: "Exercícios (adicione via código ou Spinner)"
+            font_size: 18
+
+        Label:
+            text: root.message
+            color: 1,0,0,1
+
+        Button:
+            text: "Salvar"
+            on_release: root.save_workout()
+
+        Button:
+            text: "Voltar"
+            on_release: app.root.current = "workout_list"

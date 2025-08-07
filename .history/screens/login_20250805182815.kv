@@ -1,0 +1,70 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 20
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        AnchorLayout:
+            anchor_x: 'center'
+            anchor_y: 'center'
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: None, None
+                width: 400
+                height: self.minimum_height
+                spacing: 20
+
+                Image:
+                    source: 'assets/images/logo.png'
+                    size_hint: None, None
+                    size: 200, 200
+                    allow_stretch: True
+                    keep_ratio: True
+
+                Label:
+                    text: "Login"
+                    font_size: 28
+                    color: 0, 0, 0, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                TextInput:
+                    id: email
+                    hint_text: "Email"
+                    multiline: False
+                    size_hint_y: None
+                    height: 40
+
+                TextInput:
+                    id: password
+                    hint_text: "Senha"
+                    password: True
+                    multiline: False
+                    size_hint_y: None
+                    height: 40
+
+                Label:
+                    id: message_label
+                    text: root.message
+                    color: 1, 0, 0, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+                Button:
+                    text: "Entrar"
+                    size_hint_y: None
+                    height: 40
+                    on_press: root.do_login()
+
+                Button:
+                    text: "Esqueci minha senha"
+                    size_hint_y: None
+                    height: 40
+                    on_press: root.forgot_password()

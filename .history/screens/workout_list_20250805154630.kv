@@ -1,0 +1,26 @@
+<WorkoutListScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 20
+
+        Label:
+            text: "Treinos"
+            font_size: 28
+
+        Button:
+            text: "Adicionar treino"
+            on_release: root.add_workout()
+
+        ScrollView:
+            GridLayout:
+                id: workouts_grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 40
+                row_force_default: True
+
+        Button:
+            text: "Voltar"
+            on_release: app.root.current = "trainer_menu"

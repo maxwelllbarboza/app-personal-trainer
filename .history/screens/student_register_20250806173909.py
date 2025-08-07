@@ -46,7 +46,7 @@ class StudentRegisterScreen(Screen):
         # Insere no banco
         cursor.execute("""
             INSERT INTO Pessoa (
-                id_pessoa, nome, email, telefone, data_nascimento, perfil_acesso, senha, status, tentativas
+                id_, nome, email, telefone, data_nascimento, perfil_acesso, senha, status, tentativas
             ) VALUES (?, ?, ?, ?, ?, ?, ?, 'ATIVO', 0)
         """, (
             str(uuid4()), nome, email, telefone, nascimento, perfil, hashed_password
