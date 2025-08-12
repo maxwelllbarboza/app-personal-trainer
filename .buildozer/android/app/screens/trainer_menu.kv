@@ -1,0 +1,51 @@
+<TrainerMenuScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.02, 0.02, 1  # fundo escuro
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 30
+
+        Label:
+            id: welcome
+            text: "Bem-vindo(a)!"
+            font_size: 26
+            color: 1, 1, 1, 1
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Button:
+            text: "Alunos"
+            size_hint_y: None
+            height: 50
+            background_normal: ''
+            background_color: 0.4, 0.2, 0.05, 1
+            color: 1, 1, 1, 1
+            font_size: '16sp'
+            on_release: root.go_to_students()
+
+        Button:
+            text: "Treinos"
+            size_hint_y: None
+            height: 50
+            background_normal: ''
+            background_color: 0.4, 0.2, 0.05, 1
+            color: 1, 1, 1, 1
+            font_size: '16sp'
+            on_release: root.go_to_workouts()
+
+        Button:
+            text: "Sair"
+            size_hint_y: None
+            height: 50
+            background_normal: ''
+            background_color: 0.4, 0.2, 0.05, 1
+            color: 1, 1, 1, 1
+            font_size: '16sp'
+            on_release: app.root.current = "login"

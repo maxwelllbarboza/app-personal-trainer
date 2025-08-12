@@ -1,0 +1,95 @@
+<StudentRegisterScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.02, 0.02, 1  # Fundo escuro
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 15
+
+        Label:
+            text: "Cadastro de Aluno"
+            font_size: 28
+            color: 1, 1, 1, 1
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        TextInput:
+            id: name
+            hint_text: "Nome completo"
+            multiline: False
+            background_color: 1, 1, 1, 1
+            foreground_color: 0, 0, 0, 1
+            padding: 10
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: email
+            hint_text: "Email"
+            multiline: False
+            background_color: 1, 1, 1, 1
+            foreground_color: 0, 0, 0, 1
+            padding: 10
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: phone
+            hint_text: "Telefone"
+            multiline: False
+            background_color: 1, 1, 1, 1
+            foreground_color: 0, 0, 0, 1
+            padding: 10
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: birthdate
+            hint_text: "Data de nascimento"
+            multiline: False
+            background_color: 1, 1, 1, 1
+            foreground_color: 0, 0, 0, 1
+            padding: 10
+            size_hint_y: None
+            height: 40
+
+        Spinner:
+            id: profile
+            text: "Perfil"
+            values: ["Student", "Trainer"]
+            background_color: 1, 1, 1, 1
+            color: 0, 0, 0, 1
+            size_hint_y: None
+            height: 40
+
+        Label:
+            text: root.message
+            color: 1, 0, 0, 1
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Button:
+            text: "Salvar"
+            size_hint_y: None
+            height: 45
+            background_normal: ''
+            background_color: 0.4, 0.2, 0.05, 1
+            color: 1, 1, 1, 1
+            font_size: '16sp'
+            on_release: root.save_student()
+
+        Button:
+            text: "Voltar"
+            size_hint_y: None
+            height: 45
+            background_normal: ''
+            background_color: 0.4, 0.2, 0.05, 1
+            color: 1, 1, 1, 1
+            font_size: '16sp'
+            on_release: app.root.current = "student_list"

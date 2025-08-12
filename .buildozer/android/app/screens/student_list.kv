@@ -1,0 +1,54 @@
+<StudentListScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.02, 0.02, 1  # Fundo escuro (mesmo da tela de login)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 20
+
+        BoxLayout:
+            size_hint_y: None
+            height: 40
+            spacing: 10
+
+            TextInput:
+                id: search
+                hint_text: "Buscar aluno"
+                multiline: False
+                foreground_color: 0, 0, 0, 1
+                background_color: 1, 1, 1, 1
+                padding: 10
+
+            Button:
+                text: "Adicionar"
+                background_normal: ''
+                background_color: 0.4, 0.2, 0.05, 1  # Marrom
+                color: 1, 1, 1, 1
+                font_size: '14sp'
+                on_release: root.add_student()
+
+        ScrollView:
+            GridLayout:
+                id: students_grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 40
+                row_force_default: True
+                spacing: 10
+                padding: 10
+
+        Button:
+            text: "Voltar"
+            size_hint_y: None
+            height: 50
+            background_normal: ''
+            background_color: 0.4, 0.2, 0.05, 1
+            color: 1, 1, 1, 1
+            font_size: '16sp'
+            on_release: app.root.current = "trainer_menu"

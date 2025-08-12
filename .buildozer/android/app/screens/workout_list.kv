@@ -1,0 +1,49 @@
+<WorkoutListScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.02, 0.02, 1  # fundo escuro
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 25
+
+        Label:
+            text: "Treinos"
+            font_size: 26
+            color: 1, 1, 1, 1
+            size_hint_y: None
+            height: self.texture_size[1]
+            halign: 'center'
+
+        Button:
+            text: "Adicionar treino"
+            size_hint_y: None
+            height: 50
+            background_normal: ''
+            background_color: 0.4, 0.2, 0.05, 1
+            color: 1, 1, 1, 1
+            font_size: '16sp'
+            on_release: root.add_workout()
+
+        ScrollView:
+            GridLayout:
+                id: workouts_grid
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                row_default_height: 40
+                row_force_default: True
+
+        Button:
+            text: "Voltar"
+            size_hint_y: None
+            height: 50
+            background_normal: ''
+            background_color: 0.4, 0.2, 0.05, 1
+            color: 1, 1, 1, 1
+            font_size: '16sp'
+            on_release: app.root.current = "trainer_menu"

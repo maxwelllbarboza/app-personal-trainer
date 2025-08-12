@@ -1,0 +1,68 @@
+<WorkoutRegisterScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.02, 0.02, 1  # fundo escuro
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        spacing: 25
+
+        Label:
+            text: "Cadastro de Treino"
+            font_size: 26
+            color: 1, 1, 1, 1
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        TextInput:
+            id: student
+            hint_text: "Email do aluno"
+            multiline: False
+            size_hint_y: None
+            height: 50
+            font_size: 16
+
+        TextInput:
+            id: workout_name
+            hint_text: "Nome do treino"
+            multiline: False
+            size_hint_y: None
+            height: 50
+            font_size: 16
+
+        Label:
+            text: "Exercícios (adicione via código ou Spinner)"
+            font_size: 16
+            color: 1, 1, 1, 1
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Label:
+            text: root.message
+            color: 1, 0, 0, 1
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        Button:
+            text: "Salvar"
+            size_hint_y: None
+            height: 50
+            background_normal: ''
+            background_color: 0.4, 0.2, 0.05, 1
+            color: 1, 1, 1, 1
+            font_size: 16
+            on_release: root.save_workout()
+
+        Button:
+            text: "Voltar"
+            size_hint_y: None
+            height: 50
+            background_normal: ''
+            background_color: 0.4, 0.2, 0.05, 1
+            color: 1, 1, 1, 1
+            font_size: 16
+            on_release: app.root.current = "workout_list"
